@@ -52,6 +52,8 @@ layouts = [
     layout.Floating(**border_theme),
 ]
 
+floating_types = ["notification", "toolbar", "splash", "dialog"]
+
 floating_layout = layout.Floating(
     float_rules=[
         *layout.Floating.default_float_rules,
