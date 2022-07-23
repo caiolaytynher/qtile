@@ -86,7 +86,7 @@ app_spawn = [
 
 app_launcher_spawn = [
     EzKey("M-p", lazy.spawn("rofi -show drun")),
-    EzKey("M-S-d", lazy.spawn("my_dmenu")),
+    EzKey("M-S-d", lazy.spawn("custom-dmenu")),
 ]
 
 multimedia = [
