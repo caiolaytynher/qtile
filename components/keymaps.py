@@ -1,5 +1,3 @@
-import os
-
 from libqtile.command import lazy
 from libqtile.config import EzKey, EzDrag, EzClick
 
