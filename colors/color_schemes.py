@@ -1,4 +1,4 @@
-from color_scheme import ColorScheme, Primary, Normal, Bright
+from colors.color_scheme import ColorScheme, Primary, Normal, Bright
 
 gruvbox = ColorScheme(
     primary=Primary(
