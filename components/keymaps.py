@@ -3,8 +3,8 @@ import os
 from libqtile.command import lazy
 from libqtile.config import EzKey, EzDrag, EzClick
 
-HOME = os.path.expanduser("~")
-TERMINAL = "alacritty"
+from components import HOME, TERMINAL
+
 
 EzKey.modifier_keys = {
     "M": "mod4",
