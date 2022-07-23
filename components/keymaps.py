@@ -45,14 +45,6 @@ window_manipulation = [
     EzKey("M-f", lazy.window.toggle_fullscreen()),
     EzKey("M-S-f", lazy.window.toggle_floating()),
     EzKey("M-q", lazy.window.kill()),
-    EzKey("M-C-k", lazy.layout.grow_up()),
-    EzKey("M-C-j", lazy.layout.grow_down()),
-    EzKey("M-C-h", lazy.layout.grow_left()),
-    EzKey("M-C-l", lazy.layout.grow_right()),
-    EzKey("M-C-<Up>", lazy.layout.grow_up()),
-    EzKey("M-C-<Down>", lazy.layout.grow_down()),
-    EzKey("M-C-<Left>", lazy.layout.grow_left()),
-    EzKey("M-C-<Right>", lazy.layout.grow_right()),
     EzKey("M-S-k", lazy.layout.shuffle_up()),
     EzKey("M-S-j", lazy.layout.shuffle_down()),
     EzKey("M-S-h", lazy.layout.swap_left()),
@@ -61,6 +53,61 @@ window_manipulation = [
     EzKey("M-S-<Down>", lazy.layout.shuffle_down()),
     EzKey("M-S-<Left>", lazy.layout.swap_left()),
     EzKey("M-S-<Right>", lazy.layout.swap_right()),
+]
+
+window_resize = [
+    EzKey(
+        "M-C-k",
+        lazy.layout.grow_up(),
+        lazy.layout.grow(),
+        lazy.layout.decrease_nmaster(),
+    ),
+    EzKey(
+        "M-C-j",
+        lazy.layout.grow_down(),
+        lazy.layout.shrink(),
+        lazy.layout.increase_nmaster(),
+    ),
+    EzKey(
+        "M-C-h",
+        lazy.layout.grow_left(),
+        lazy.layout.shrink(),
+        lazy.layout.decrease_ratio(),
+        lazy.layout.add(),
+    ),
+    EzKey(
+        "M-C-l",
+        lazy.layout.grow_right(),
+        lazy.layout.grow(),
+        lazy.layout.increase_ratio(),
+        lazy.layout.delete(),
+    ),
+    EzKey(
+        "M-C-<Up>",
+        lazy.layout.grow_up(),
+        lazy.layout.grow(),
+        lazy.layout.decrease_nmaster(),
+    ),
+    EzKey(
+        "M-C-<Down>",
+        lazy.layout.grow_down(),
+        lazy.layout.shrink(),
+        lazy.layout.increase_nmaster(),
+    ),
+    EzKey(
+        "M-C-<Left>",
+        lazy.layout.grow_left(),
+        lazy.layout.shrink(),
+        lazy.layout.decrease_ratio(),
+        lazy.layout.add(),
+    ),
+    EzKey(
+        "M-C-<Right>",
+        lazy.layout.grow_right(),
+        lazy.layout.grow(),
+        lazy.layout.increase_ratio(),
+        lazy.layout.delete(),
+    ),
 ]
 
 layout_control = [
