@@ -6,12 +6,15 @@ from components.keymaps import keys
 from colors import colors
 
 groups: list[Group] = [
-    Group("9", "\uf444", "treetab"),
-    Group("0", "\uf444", "floating"),
+    Group(
+        name="0",
+        label="\uf444",
+        layout="floating",
+    ),
 ]
 
 # Insert the rest of the groups backwards
-for i in range(8, 0, -1):
+for i in range(9, 0, -1):
     groups.insert(
         0,
         Group(
