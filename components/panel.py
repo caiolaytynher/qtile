@@ -1,5 +1,3 @@
-import os
-
 from libqtile import widget, bar, qtile
 from libqtile.config import Screen
 
