@@ -154,6 +154,7 @@ brightness = [
 keys = [
     *window_navigation,
     *window_manipulation,
+    *window_resize,
     *layout_control,
     *desktop_control,
     *app_spawn,
