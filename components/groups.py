@@ -42,7 +42,7 @@ for group in groups:
 border_theme = {
     "margin": 9,
     "border_width": 2,
-    "border_focus": colors.normal.yellow,
+    "border_focus": colors.normal.blue,
     "border_normal": colors.primary.background_light,
 }
 
