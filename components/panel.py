@@ -18,7 +18,7 @@ def init_powerline_widget(
     foreground: list[str] = colors.primary.foreground,
     background: list[str] = colors.primary.background,
     # text="",
-    text=" ",
+    text=" ",
     # text="",
 ) -> widget.TextBox:
     """
@@ -29,13 +29,13 @@ def init_powerline_widget(
         padding=0,
         foreground=foreground,
         background=background,
-        fontsize=32,
+        fontsize=20,
     )
 
 
 fg_spacer = widget.Spacer(
     length=9,
-    background=colors.normal.yellow,
+    background=colors.normal.blue,
 )
 bg_spacer = widget.Spacer(
     length=7,
@@ -48,7 +48,7 @@ group_box = widget.GroupBox(
     rounded=False,
     highlight_method="text",
     urgent_alert_method="text",
-    this_current_screen_border=colors.normal.yellow,
+    this_current_screen_border=colors.normal.blue,
     disable_drag=True,
 )
 hidden_task_list = widget.WidgetBox(
@@ -60,7 +60,7 @@ hidden_task_list = widget.WidgetBox(
             max_title_width=150,
             rounded=True,
             padding=1,
-            border=colors.normal.yellow,
+            border=colors.normal.blue,
             margin=0,
             txt_floating="🗗",
             txt_minimized=">_ ",
@@ -68,21 +68,21 @@ hidden_task_list = widget.WidgetBox(
     ],
     text_closed=" ",
     text_open=" ",
-    foreground=colors.normal.yellow,
+    foreground=colors.normal.blue,
 )
 current_layout = [
     widget.CurrentLayoutIcon(
-        background=colors.normal.yellow,
+        background=colors.normal.blue,
         custom_icon_paths=[f"{HOME}/.config/qtile/icons"],
         padding=0,
         scale=0.7,
     ),
     widget.CurrentLayout(
-        background=colors.normal.yellow,
+        background=colors.normal.blue,
     ),
 ]
 check_updates = widget.CheckUpdates(
-    background=colors.normal.yellow,
+    background=colors.normal.blue,
     display_format=" {updates}",
     no_update_string=" 0",
     mouse_callbacks={
@@ -98,29 +98,29 @@ hidden_net = widget.WidgetBox(
             interface=["wlp1s0"],
             format="{down} 祝{up}",
             padding=0,
-            foreground=colors.normal.yellow,
+            foreground=colors.normal.blue,
         )
     ],
     text_closed=" ",
     text_open=" : ",
-    foreground=colors.normal.yellow,
+    foreground=colors.normal.blue,
 )
 hidden_pc_status = widget.WidgetBox(
     widgets=[
         widget.DF(
-            foreground=colors.normal.yellow,
+            foreground=colors.normal.blue,
             visible_on_warn=False,
             format=" {uf}G {r:.0f}% ",
             mouse_callbacks={"Button1": lambda: qtile.cmd_spawn(f"{TERMINAL} -e htop")},
         ),
         widget.CPU(
-            foreground=colors.normal.yellow,
+            foreground=colors.normal.blue,
             update_interval=1,
             mouse_callbacks={"Button1": lambda: qtile.cmd_spawn(f"{TERMINAL} -e htop")},
             format=" {freq_current}GHz {load_percent}% ",
         ),
         widget.Memory(
-            foreground=colors.normal.yellow,
+            foreground=colors.normal.blue,
             format=" {MemUsed:.0f}M/{MemTotal:.0f}M",
             update_interval=1,
             measure_mem="M",
@@ -129,10 +129,10 @@ hidden_pc_status = widget.WidgetBox(
     ],
     text_closed="",
     text_open=": ",
-    foreground=colors.normal.yellow,
+    foreground=colors.normal.blue,
 )
 clock = widget.Clock(
-    background=colors.normal.yellow,
+    background=colors.normal.blue,
     format=" %d/%m/%Y  %H:%M",
 )
 hidden_systray = widget.WidgetBox(
@@ -142,12 +142,12 @@ hidden_systray = widget.WidgetBox(
             padding=4,
         ),
     ],
-    foreground=colors.normal.yellow,
+    foreground=colors.normal.blue,
     text_closed="  ",
     text_open="  ",
 )
 battery = widget.Battery(
-    foreground=colors.normal.yellow,
+    foreground=colors.normal.blue,
     format="{char} {percent:2.0%}",
     charge_char=" ",
     discharge_char="",
@@ -160,25 +160,25 @@ battery = widget.Battery(
 python_logo = widget.TextBox(
     text=" ",
     fontsize=20,
-    background=colors.normal.yellow,
+    background=colors.normal.blue,
     mouse_callbacks={"Button1": lambda: qtile.cmd_spawn("rofi -show drun")},
 )
 right_separator_bg = init_powerline_widget(
-    background=colors.normal.yellow,
+    background=colors.normal.blue,
     foreground=colors.primary.background,
 )
 right_separator_fg = init_powerline_widget(
-    foreground=colors.normal.yellow,
+    foreground=colors.normal.blue,
     background=colors.primary.background,
 )
 left_separator_bg = init_powerline_widget(
     text=" ",
-    background=colors.normal.yellow,
+    background=colors.normal.blue,
     foreground=colors.primary.background,
 )
 left_separator_fg = init_powerline_widget(
     text=" ",
-    foreground=colors.normal.yellow,
+    foreground=colors.normal.blue,
     background=colors.primary.background,
 )
 
