@@ -144,7 +144,7 @@ hidden_systray = widget.WidgetBox(
     ],
     foreground=colors.normal.blue,
     text_closed="  ",
-    text_open="  ",
+    text_open=" ",
 )
 battery = widget.Battery(
     foreground=colors.normal.blue,
