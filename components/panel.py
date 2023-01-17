@@ -1,22 +1,25 @@
 from libqtile import widget, bar, qtile
 from libqtile.config import Screen
 
-from colors import colors
-from components import HOME, TERMINAL
-
+from themes.themes import theme
+from constants import HOME, TERMINAL
 
 widget_defaults = dict(
     font="JetBrainsMono Nerd Font Bold",
+    # font="OpenDyslexic Nerd Font",
+    # font="CaskaydiaCove Nerd Font",
+    # font="ProggyCleanTTSZ Nerd Font",
+    # font="TerminessTTF Nerd Font",
     fontsize=15,
     padding=2,
-    background=colors.primary.background,
-    foreground=colors.primary.foreground,
+    background=theme.background,
+    foreground=theme.foreground,
 )
 
 
 def init_powerline_widget(
-    foreground: list[str] = colors.primary.foreground,
-    background: list[str] = colors.primary.background,
+    foreground: list[str] = theme.foreground,
+    background: list[str] = theme.background,
     # text="",
     text=" ",
     # text="",
@@ -35,20 +38,20 @@ def init_powerline_widget(
 
 fg_spacer = widget.Spacer(
     length=9,
-    background=colors.normal.blue,
+    background=theme.accent,
 )
 bg_spacer = widget.Spacer(
     length=7,
 )
 group_box = widget.GroupBox(
-    fontsize=40,
+    fontsize=25,
     borderwidth=3,
-    active=colors.primary.foreground,
-    inactive=colors.primary.background_light,
+    active=theme.foreground,
+    inactive=theme.contrast[0],
     rounded=False,
     highlight_method="text",
     urgent_alert_method="text",
-    this_current_screen_border=colors.normal.blue,
+    this_current_screen_border=theme.accent,
     disable_drag=True,
 )
 hidden_task_list = widget.WidgetBox(
@@ -60,7 +63,7 @@ hidden_task_list = widget.WidgetBox(
             max_title_width=150,
             rounded=True,
             padding=1,
-            border=colors.normal.blue,
+            border=theme.accent,
             margin=0,
             txt_floating="🗗",
             txt_minimized=">_ ",
@@ -68,21 +71,21 @@ hidden_task_list = widget.WidgetBox(
     ],
     text_closed=" ",
     text_open=" ",
-    foreground=colors.normal.blue,
+    foreground=theme.accent,
 )
 current_layout = [
     widget.CurrentLayoutIcon(
-        background=colors.normal.blue,
+        background=theme.accent,
         custom_icon_paths=[f"{HOME}/.config/qtile/icons"],
         padding=0,
         scale=0.7,
     ),
     widget.CurrentLayout(
-        background=colors.normal.blue,
+        background=theme.accent,
     ),
 ]
 check_updates = widget.CheckUpdates(
-    background=colors.normal.blue,
+    background=theme.accent,
     display_format=" {updates}",
     no_update_string=" 0",
     mouse_callbacks={
@@ -98,41 +101,47 @@ hidden_net = widget.WidgetBox(
             interface=["wlp1s0"],
             format="{down} 祝{up}",
             padding=0,
-            foreground=colors.normal.blue,
+            foreground=theme.accent,
         )
     ],
     text_closed=" ",
     text_open=" : ",
-    foreground=colors.normal.blue,
+    foreground=theme.accent,
 )
 hidden_pc_status = widget.WidgetBox(
     widgets=[
         widget.DF(
-            foreground=colors.normal.blue,
+            foreground=theme.accent,
             visible_on_warn=False,
             format=" {uf}G {r:.0f}% ",
-            mouse_callbacks={"Button1": lambda: qtile.cmd_spawn(f"{TERMINAL} -e htop")},
+            mouse_callbacks={
+                "Button1": lambda: qtile.cmd_spawn(f"{TERMINAL} -e htop")
+            },
         ),
         widget.CPU(
-            foreground=colors.normal.blue,
+            foreground=theme.accent,
             update_interval=1,
-            mouse_callbacks={"Button1": lambda: qtile.cmd_spawn(f"{TERMINAL} -e htop")},
+            mouse_callbacks={
+                "Button1": lambda: qtile.cmd_spawn(f"{TERMINAL} -e htop")
+            },
             format=" {freq_current}GHz {load_percent}% ",
         ),
         widget.Memory(
-            foreground=colors.normal.blue,
+            foreground=theme.accent,
             format=" {MemUsed:.0f}M/{MemTotal:.0f}M",
             update_interval=1,
             measure_mem="M",
-            mouse_callbacks={"Button1": lambda: qtile.cmd_spawn(f"{TERMINAL} -e htop")},
+            mouse_callbacks={
+                "Button1": lambda: qtile.cmd_spawn(f"{TERMINAL} -e htop")
+            },
         ),
     ],
     text_closed="",
     text_open=": ",
-    foreground=colors.normal.blue,
+    foreground=theme.accent,
 )
 clock = widget.Clock(
-    background=colors.normal.blue,
+    background=theme.accent,
     format=" %d/%m/%Y  %H:%M",
 )
 hidden_systray = widget.WidgetBox(
@@ -142,12 +151,12 @@ hidden_systray = widget.WidgetBox(
             padding=4,
         ),
     ],
-    foreground=colors.normal.blue,
+    foreground=theme.accent,
     text_closed="  ",
     text_open=" ",
 )
 battery = widget.Battery(
-    foreground=colors.normal.blue,
+    foreground=theme.accent,
     format="{char} {percent:2.0%}",
     charge_char=" ",
     discharge_char="",
@@ -155,31 +164,31 @@ battery = widget.Battery(
     unknown_char="",
     empty_char="",
     low_percentage=0.2,
-    low_foreground=colors.bright.red,
+    low_foreground=theme.alert,
 )
 python_logo = widget.TextBox(
     text=" ",
     fontsize=20,
-    background=colors.normal.blue,
+    background=theme.accent,
     mouse_callbacks={"Button1": lambda: qtile.cmd_spawn("rofi -show drun")},
 )
 right_separator_bg = init_powerline_widget(
-    background=colors.normal.blue,
-    foreground=colors.primary.background,
+    background=theme.accent,
+    foreground=theme.background,
 )
 right_separator_fg = init_powerline_widget(
-    foreground=colors.normal.blue,
-    background=colors.primary.background,
+    foreground=theme.accent,
+    background=theme.background,
 )
 left_separator_bg = init_powerline_widget(
     text=" ",
-    background=colors.normal.blue,
-    foreground=colors.primary.background,
+    background=theme.accent,
+    foreground=theme.background,
 )
 left_separator_fg = init_powerline_widget(
     text=" ",
-    foreground=colors.normal.blue,
-    background=colors.primary.background,
+    foreground=theme.accent,
+    background=theme.background,
 )
 
 widgets_list = [
