@@ -1,7 +1,7 @@
 from libqtile.command import lazy
 from libqtile.config import EzKey, EzDrag, EzClick
 
-from components import HOME, TERMINAL
+from constants import HOME, TERMINAL
 
 
 EzKey.modifier_keys = {
@@ -118,9 +118,11 @@ desktop_control = [
     EzKey("M-b", lazy.spawn("qtile cmd-obj -o cmd -f hide_show_bar")),
     EzKey("M-S-r", lazy.restart()),
     EzKey("M-S-x", lazy.spawn("power-off-screen")),
-    EzKey("M-S-c", lazy.spawn("change-color-scheme")),
+    EzKey("M-S-c", lazy.spawn("change-theme")),
     EzKey("M-S-o", lazy.spawn("picom-toggle")),
-    EzKey("<Print>", lazy.spawn(f"flameshot full -p {HOME}/Pictures/screenshots")),
+    EzKey(
+        "<Print>", lazy.spawn(f"flameshot full -p {HOME}/Pictures/screenshots")
+    ),
 ]
 
 app_spawn = [
