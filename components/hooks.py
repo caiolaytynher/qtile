@@ -4,7 +4,7 @@ import psutil
 from libqtile import hook
 from libqtile.command import lazy
 
-from components import HOME
+from constants import HOME
 from components.groups import floating_types
 
 
@@ -47,9 +47,10 @@ def _swallow(window):
     pid = window.window.get_net_wm_pid()
     ppid = psutil.Process(pid).ppid()
     cpids = {
-        c.window.get_net_wm_pid(): wid for wid, c in window.qtile.windows_map.items()
+        c.window.get_net_wm_pid(): wid
+        for wid, c in window.qtile.windows_map.items()
     }
-    for i in range(5):
+    for _ in range(5):
         if not ppid:
             return
         if ppid in cpids:
