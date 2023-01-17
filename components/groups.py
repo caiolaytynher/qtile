@@ -3,7 +3,7 @@ from libqtile.command import lazy
 from libqtile.config import Group, EzKey, Match
 
 from components.keymaps import keys
-from colors import colors
+from themes.themes import theme
 
 groups: list[Group] = [
     Group(
@@ -42,8 +42,8 @@ for group in groups:
 border_theme = {
     "margin": 9,
     "border_width": 2,
-    "border_focus": colors.normal.blue,
-    "border_normal": colors.primary.background_light,
+    "border_focus": theme.accent,
+    "border_normal": theme.contrast[0],
 }
 
 layouts = [
