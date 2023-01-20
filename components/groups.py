@@ -6,23 +6,16 @@ from components.keymaps import keys
 from themes.themes import theme
 
 groups: list[Group] = [
+    Group(name=str(i), layout="monadtall", label="\uf444")
+    for i in range(1, 10)
+]
+groups.append(
     Group(
         name="0",
         label="\uf444",
         layout="floating",
     ),
-]
-
-# Insert the rest of the groups backwards
-for i in range(9, 0, -1):
-    groups.insert(
-        0,
-        Group(
-            name=str(i),
-            layout="monadtall",
-            label="\uf444",
-        ),
-    )
+)
 
 for group in groups:
     keys.extend(
@@ -44,14 +37,13 @@ border_theme = {
     "border_width": 2,
     "border_focus": theme.accent,
     "border_normal": theme.contrast[0],
+    # "border_focus": theme.contrast[3],
+    # "border_normal": theme.contrast[0],
 }
 
 layouts = [
     layout.MonadTall(**border_theme),
-    layout.MonadWide(**border_theme),
-    layout.Matrix(**border_theme),
-    layout.Zoomy(**border_theme),
-    layout.Max(**border_theme),
+    layout.Max(margin=0),
     layout.Floating(**border_theme),
 ]
 
