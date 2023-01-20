@@ -2,7 +2,7 @@ from constants import USER, HOSTNAME
 from components import hooks
 from components.groups import floating_layout, groups, layouts
 from components.keymaps import keys, mouse
-from components.panel import screens, widget_defaults
+from components.panels.themed import screens, widget_defaults
 
 main = None
 
