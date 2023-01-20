@@ -3,7 +3,6 @@ from pathlib import Path
 from libqtile import widget, bar, qtile
 from libqtile.config import Screen
 
-from constants import TERMINAL
 from themes.themes import theme
 
 widget_defaults = {
@@ -92,6 +91,7 @@ battery = widget.Battery(
 temperature = widget.ThermalSensor(
     foreground=theme.foreground,
     padding=10,
+    foreground_alert=theme.alert,
     format="\uf2c9 {temp:.0f}{unit}",
 )
 
