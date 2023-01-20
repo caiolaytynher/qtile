@@ -91,7 +91,6 @@ check_updates = widget.CheckUpdates(
     mouse_callbacks={
         "Button1": lambda: qtile.cmd_spawn(f"{TERMINAL} -e sudo pacman -Syu")
     },
-    # distro="Garuda",
     distro="Arch",
 )
 hidden_net = widget.WidgetBox(
