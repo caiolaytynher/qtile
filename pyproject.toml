@@ -1,2 +1,2 @@
 [tool.pyright]
-include = ['components', 'themes', 'constants']
+include = ['components', 'themes', 'constants', 'panels']
