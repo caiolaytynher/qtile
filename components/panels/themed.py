@@ -30,6 +30,12 @@ powerline_defaults = {
     "fontsize": 29,
 }
 
+powerline_contrast_defaults = {
+    "foreground": theme.contrast[0],
+    "padding": 0,
+    "fontsize": 29,
+}
+
 powerline_left = widget.TextBox(
     text="\ue0b8 ",
     **powerline_defaults,
@@ -40,10 +46,21 @@ powerline_right = widget.TextBox(
     **powerline_defaults,
 )
 
+powerline_contrast_left = widget.TextBox(
+    text="\ue0b8 ",
+    **powerline_contrast_defaults,
+)
+
+powerline_contrast_right = widget.TextBox(
+    text="\ue0be ",
+    **powerline_contrast_defaults,
+)
+
 powerline_sep = widget.TextBox(
     text="\ue0b9 ",
     **powerline_defaults,
 )
+
 
 workspaces = widget.GroupBox(
     fontsize=25,
@@ -71,6 +88,7 @@ current_layout = widget.CurrentLayoutIcon(
 
 clock = widget.Clock(
     format="\uf5f5 %b, %d \uf017 %H:%M",
+    background=theme.contrast[0],
 )
 
 hidden_systray = widget.WidgetBox(
@@ -100,7 +118,9 @@ widgets_list = [
     workspaces,
     powerline_left,
     widget.Spacer(),
+    powerline_contrast_right,
     clock,
+    powerline_contrast_left,
     widget.Spacer(),
     hidden_systray,
     powerline_sep,
