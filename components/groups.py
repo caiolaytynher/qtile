@@ -37,8 +37,6 @@ border_theme = {
     "border_width": 2,
     "border_focus": theme.accent,
     "border_normal": theme.contrast[0],
-    # "border_focus": theme.contrast[3],
-    # "border_normal": theme.contrast[0],
 }
 
 layouts = [
