@@ -119,6 +119,7 @@ desktop_control = [
     EzKey("M-S-r", lazy.restart()),
     EzKey("M-S-x", lazy.spawn("power-off-screen")),
     EzKey("M-S-c", lazy.spawn("change-theme")),
+    EzKey("M-S-b", lazy.spawn("change-bar")),
     EzKey("M-S-o", lazy.spawn("picom-toggle")),
     EzKey(
         "<Print>", lazy.spawn(f"flameshot full -p {HOME}/Pictures/screenshots")
