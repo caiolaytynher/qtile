@@ -91,4 +91,4 @@ onedark = Theme(
     alert=["#e06c75", "#e06c75"],
 )
 
-theme = tokyonight
+theme = onedark

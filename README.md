@@ -1,4 +1,8 @@
-# Qtile
+# Deprecated
+
+No longer maintained.
+
+## Qtile
 
 This is my personal configuration of the Qtile window manager.
 

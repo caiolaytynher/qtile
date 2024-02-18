@@ -35,7 +35,7 @@ for group in groups:
 border_theme = {
     "margin": 9,
     "border_width": 2,
-    "border_focus": theme.accent,
+    "border_focus": theme.contrast[3],
     "border_normal": theme.contrast[0],
 }
 
